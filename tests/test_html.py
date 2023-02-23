@@ -14,6 +14,6 @@ def test_category_page_contents(client, url, slug):
     msg_url = url.replace(slug, msg_slug)
     slug_found_in_page_html = slug in response.content.decode()
     assert slug_found_in_page_html, (
-        f'Убедитесь, что при открытии страницы `{msg_url}` '
-        f'на ней отображается текст `{msg_slug}`.'
+        f'Убедитесь, что на странице `{msg_url}` '
+        f'отображается текст `{msg_slug}`.'
     )

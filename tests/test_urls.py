@@ -11,11 +11,11 @@ def test_blog_urls():
             f'`blog/urls.py` произошла ошибка: {e}'
         ) from e
     assert isinstance(solution_urlpatterns, list), (
-        'Убедитесь, что значением переменной `urlpatterns` является список.'
+        'Убедитесь, что значение переменной `urlpatterns` - это список.'
     )
     assert len(solution_urlpatterns) >= 3, (
-        'Убедитесь, что добавили необходимые маршруты в список `urlpatterns` '
-        'из файла `blog/urls.py`.'
+        'Убедитесь, что все необходимые маршруты добавлены в список `urlpatterns` '
+        'в файле `blog/urls.py`.'
     )
 
 
@@ -28,12 +28,12 @@ def test_pages_urls():
             f'`pages/urls.py` произошла ошибка: {e}'
         ) from e
     assert isinstance(solution_urlpatterns, list), (
-        'Убедитесь, что значением переменной `urlpatterns` из файла '
-        '`pages/urls.py` является список.'
+        'Убедитесь, что значение переменной `urlpatterns` в файле '
+        '`pages/urls.py` - это список.'
     )
     assert len(solution_urlpatterns) >= 2, (
-        'Убедитесь, что добавили необходимые маршруты в список `urlpatterns` '
-        'из файла `pages/urls.py`.'
+        'Убедитесь, что все необходимые маршруты добавлены в список `urlpatterns` '
+        'в файле `pages/urls.py`.'
     )
 
 
@@ -42,7 +42,7 @@ def test_blog_appname():
         from blog.urls import app_name as solution_appname
     except ImportError as e:
         raise AssertionError(
-            'Убедитесь, что указали `app_name` для приложения `blog`'
+            'Убедитесь, что для приложения `blog` в переменной `app_name` указан `namespace`.'
         ) from e
     except Exception as e:
         raise AssertionError(
@@ -50,8 +50,8 @@ def test_blog_appname():
             f'возникла ошибка: {e}'
         ) from e
     assert solution_appname == 'blog', (
-        'Проверьте значение переменной `app_name` в файле urls.py приложения '
-        '`blog`'
+        'Убедитесь, что в файле urls.py приложения `blog` '
+        'значение переменной `app_name` указано без ошибок.'
     )
 
 
@@ -60,11 +60,11 @@ def test_pages_appname():
         from pages.urls import app_name as solution_appname
     except Exception as e:
         raise AssertionError(
-            'Убедитесь, что указали `app_name` для приложения `pages`'
+            'Убедитесь, что для приложения `pages` в переменной `app_name` указан `namespace`.'
         ) from e
     assert solution_appname == 'pages', (
-        'Проверьте значение переменной `app_name` в файле urls.py приложения '
-        '`pages`'
+        'Убедитесь, что в файле urls.py приложения `pages` '
+        'значение переменной `app_name` указано без ошибок.'
     )
 
 
@@ -80,8 +80,8 @@ def test_blog_url_names(value, name):
         reverse(name, args=args if value else None)
     except NoReverseMatch as e:
         raise AssertionError(
-            'Проверьте наличие путей из задания для приложения `blog` и '
-            'корректность написания их имён. '
+            'Убедитесь, что пути в приложении `blog` указаны в соответствии с заданием. '
+            'Проверьте корректность написания имён `name`. '
             f'При поиске пути по имени `{name}` '
             f'с аргументами `{args}` возникла ошибка: {e}'
         ) from e
@@ -98,8 +98,8 @@ def test_pages_url_names(name):
         reverse(name)
     except NoReverseMatch as e:
         raise AssertionError(
-            'Проверьте наличие путей из задания для приложения `pages` и '
-            'корректность написания их имён. '
+            'Убедитесь, что пути в приложении `pages` указаны в соответствии с заданием. '
+            'Проверьте корректность написания имён `name`. '
             f'При поиске пути по имени `{name}` возникла ошибка: {e}'
         ) from e
     except Exception as e:
