@@ -15,7 +15,8 @@ def test_static_dir(settings_app_name, project_dirname):
         staticfiles_dirs = settings_app.settings.STATICFILES_DIRS
     except Exception as e:
         raise AssertionError(
-            'Убедитесь, что в файле settings.py установлена переменная `STATICFILES_DIRS`.'
+            'Убедитесь, что в файле settings.py установлена переменная '
+            '`STATICFILES_DIRS`.'
         ) from e
     assert isinstance(staticfiles_dirs, list), (
         'Убедитесь, что значение переменной `STATICFILES_DIRS` в файле '

@@ -14,8 +14,8 @@ def test_blog_urls():
         'Убедитесь, что значение переменной `urlpatterns` - это список.'
     )
     assert len(solution_urlpatterns) >= 3, (
-        'Убедитесь, что все необходимые маршруты добавлены в список `urlpatterns` '
-        'в файле `blog/urls.py`.'
+        'Убедитесь, что все необходимые маршруты добавлены в список '
+        '`urlpatterns` в файле `blog/urls.py`.'
     )
 
 
@@ -32,8 +32,8 @@ def test_pages_urls():
         '`pages/urls.py` - это список.'
     )
     assert len(solution_urlpatterns) >= 2, (
-        'Убедитесь, что все необходимые маршруты добавлены в список `urlpatterns` '
-        'в файле `pages/urls.py`.'
+        'Убедитесь, что все необходимые маршруты добавлены в список '
+        '`urlpatterns` в файле `pages/urls.py`.'
     )
 
 
@@ -42,7 +42,8 @@ def test_blog_appname():
         from blog.urls import app_name as solution_appname
     except ImportError as e:
         raise AssertionError(
-            'Убедитесь, что для приложения `blog` в переменной `app_name` указан `namespace`.'
+            'Убедитесь, что для приложения `blog` в переменной `app_name` '
+            'указан `namespace`.'
         ) from e
     except Exception as e:
         raise AssertionError(
@@ -60,7 +61,8 @@ def test_pages_appname():
         from pages.urls import app_name as solution_appname
     except Exception as e:
         raise AssertionError(
-            'Убедитесь, что для приложения `pages` в переменной `app_name` указан `namespace`.'
+            'Убедитесь, что для приложения `pages` в переменной `app_name` '
+            'указан `namespace`.'
         ) from e
     assert solution_appname == 'pages', (
         'Убедитесь, что в файле urls.py приложения `pages` '
@@ -80,7 +82,8 @@ def test_blog_url_names(value, name):
         reverse(name, args=args if value else None)
     except NoReverseMatch as e:
         raise AssertionError(
-            'Убедитесь, что пути в приложении `blog` указаны в соответствии с заданием. '
+            'Убедитесь, что пути в приложении `blog` указаны в соответствии с '
+            'заданием. '
             'Проверьте корректность написания имён `name`. '
             f'При поиске пути по имени `{name}` '
             f'с аргументами `{args}` возникла ошибка: {e}'
@@ -98,7 +101,8 @@ def test_pages_url_names(name):
         reverse(name)
     except NoReverseMatch as e:
         raise AssertionError(
-            'Убедитесь, что пути в приложении `pages` указаны в соответствии с заданием. '
+            'Убедитесь, что пути в приложении `pages` указаны в соответствии '
+            'с заданием. '
             'Проверьте корректность написания имён `name`. '
             f'При поиске пути по имени `{name}` возникла ошибка: {e}'
         ) from e
