@@ -45,7 +45,6 @@ posts = [
 ]
 
 
-# Create your views here.
 def index(request):
     template = 'blog/index.html'
     context = {
@@ -56,7 +55,7 @@ def index(request):
 def post_detail(request, id):
     template = 'blog/detail.html'
     context = {'post': posts[id]}
-    if len(posts) == 0:
+    if len(posts) == 0 or not posts[id]:
         raise Http404()
 
     return render(request, template, context)

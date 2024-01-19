@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% block title %}
 {{ post.location }}
 {% endblock %}
 {% block content %}
 
-    <main>
-      <div class="container py-5">
+
         <article>
           
           <ul>
@@ -23,7 +22,6 @@
           <p>
           {{ post.text|linebreaks }} 
           </p>    
-          
           
         </article>                
       </div>
